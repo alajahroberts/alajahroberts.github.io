@@ -31,12 +31,15 @@ var init = function (window) {
     circles.push(circle);
              };
         // TODO 3 / 7 : Call the drawCircle() function 
-        drawCircle(0);
-        drawCircle(1);
-        drawCircle(2);
-        drawCircle(3);
-        drawCircle(4);
-        drawCircle(5);
+        //drawCircle(0);
+        //drawCircle(1);
+        //drawCircle(2);
+        //drawCircle(3);
+        //drawCircle(4);
+        //drawCircle(5);
+         
+        for(var i = 0; i < 100; i++){
+            drawCircle(i);
         }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -62,9 +65,7 @@ var init = function (window) {
             game.checkCirclePosition(circle[4])
 
             // TODO 9 : Iterate over the array
-        
             
-        }
     
         /* 
         This Function should check the position of a circle that is passed to the 
