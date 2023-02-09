@@ -24,12 +24,12 @@ var init = function (window) {
             var circles = {};
 
         // TODO 2 : Create a function that draws a circle 
-              function drawCircle();
+              function drawCircle(){
               cirlce = draw.randomCircleInAre(canvas, true, true, '#999', 2);
     physikz.addRandomVelocity(circle, canvas);
     view.addChild(circle);
     circles.push(circle);
-
+             };
         // TODO 3 / 7 : Call the drawCircle() function 
         drawCircle(0);
         drawCircle(1);
@@ -37,7 +37,6 @@ var init = function (window) {
         drawCircle(3);
         drawCircle(4);
         drawCircle(5);
-        
         }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
