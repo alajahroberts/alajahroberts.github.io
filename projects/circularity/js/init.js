@@ -21,12 +21,12 @@ var init = function (window) {
         
         // TODO 1 : Declare and initialize our variables
             var cirlce;
-            var circles = {};
+            var circles = [];
 
         // TODO 2 : Create a function that draws a circle 
               function drawCircle(){
-              cirlce = draw.randomCircleInAre(canvas, true, true, '#999', 2);
-    physikz.addRandomVelocity(circle, canvas);
+              circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+    physikz.addRandomVelocity(circle, canvas, 20, 20);
     view.addChild(circle);
     circles.push(circle);
              };
@@ -79,16 +79,22 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-        }  
-            if (circle. x > canvas.width) {
-                circle.x = 0;
+          
+            if (circle.x < 0) {
+                circle.x = canvas.width;
+            }
+            if (circle.y > canvas.height){
+                circle.y = 0;
+            }
+            if (circle.y < 0){
+                circle.y = canvas.height;
             }
 
-
+        }
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-             if (circle.x < 1 ) {
-                circle.y = 0;
-             }
+             
+            
+             
         
         /////////////////////////////////////////////////////////////
         // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
