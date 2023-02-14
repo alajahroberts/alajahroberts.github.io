@@ -14,7 +14,7 @@ var init = function (window) {
         
         window.opspark.game = {};
         var game = window.opspark.game;
-        
+    
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -29,7 +29,7 @@ var init = function (window) {
     physikz.addRandomVelocity(circle, canvas, 20, 20);
     view.addChild(circle);
     circles.push(circle);
-             };
+             }
         // TODO 3 / 7 : Call the drawCircle() function 
         //drawCircle(0);
         //drawCircle(1);
@@ -39,7 +39,7 @@ var init = function (window) {
         //drawCircle(5);
          
         for(var i = 0; i < 100; i++){
-            drawCircle(i);
+            drawCircle([i]);
         }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -52,20 +52,25 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            physikz.updatePosition(circle[0])
-            physikz.updatePosition(circle[1])
-            physikz.updatePosition(circle[2])
-            physikz.updatePosition(circle[3])
-            physikz.updatePosition(circle[4])
+           //physikz.updatePosition(circle[0])
+            //physikz.updatePosition(circle[1])
+            // physikz.updatePosition(circle[2])
+            //physikz.updatePosition(circle[3])
+            //physikz.updatePosition(circle[4])
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-            game.checkCirclePosition(cirlce[0])
-            game.checkCirclePosition(circle[1])
-            game.checkCirclePosition(circle[2])
-            game.checkCirclePosition(circle[3])
-            game.checkCirclePosition(circle[4])
+            //game.checkCirclePosition(cirlce[0])
+           // game.checkCirclePosition(circle[1])
+           // game.checkCirclePosition(circle[2])
+            //game.checkCirclePosition(circle[3])
+            //game.checkCirclePosition(circle[4])
 
             // TODO 9 : Iterate over the array
-            
+            for (var j = 0; j < circles.length; j++ ){
+                var eachCircle = ([j]);
+                physikz.updatePosition(eachCircle);
+                game.checkCirclePosition(eachCirlce);
+            }
+        }
     
         /* 
         This Function should check the position of a circle that is passed to the 
@@ -115,8 +120,7 @@ var init = function (window) {
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
-    (typeof process.versions.node !== 'undefined')) {
+    (typeof process.versions.node !== 'undefined')){ 
     // here, export any references you need for tests //
-    module.exports = init;
-
-    }
+    module.exports = init;}
+  
