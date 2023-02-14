@@ -20,7 +20,7 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-            var cirlce;
+            var circle;
             var circles = [];
 
         // TODO 2 : Create a function that draws a circle 
@@ -68,7 +68,7 @@ var init = function (window) {
             for (var j = 0; j < circles.length; j++ ){
                 var eachCircle = ([j]);
                 physikz.updatePosition(eachCircle);
-                game.checkCirclePosition(eachCirlce);
+                game.checkCirclePosition(eachCircle);
             }
         }
     
@@ -115,7 +115,7 @@ var init = function (window) {
         game.update = update;
         
         app.addUpdateable(window.opspark.game);
-    }
+    };
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
@@ -123,4 +123,4 @@ if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')){ 
     // here, export any references you need for tests //
     module.exports = init;}
-  
+}
