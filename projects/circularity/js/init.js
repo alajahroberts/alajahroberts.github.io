@@ -26,9 +26,9 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
               function drawCircle(){
               circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-    physikz.addRandomVelocity(circle, canvas, 20, 20);
-    view.addChild(circle);
-    circles.push(circle);
+                physikz.addRandomVelocity(circle, canvas, 20, 20);
+                view.addChild(circle);
+                circles.push(circle);
              }
         // TODO 3 / 7 : Call the drawCircle() function 
         //drawCircle(0);
@@ -37,7 +37,7 @@ var init = function (window) {
         //drawCircle(3);
         //drawCircle(4);
         //drawCircle(5);
-         
+         var i = 0;
         for(var i = 0; i < 100; i++){
             drawCircle([i]);
         }
@@ -51,6 +51,14 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
         function update() {
+            for (var j = 0; j < circles.length; j++ ){
+                var eachCircle = [j];
+                physikz.updatePosition(eachCircle);
+                game.checkCirclePosition(eachCircle);
+            } 
+
+
+
             // TODO 4 : Update the circle's position //
            //physikz.updatePosition(circle[0])
             //physikz.updatePosition(circle[1])
@@ -65,11 +73,7 @@ var init = function (window) {
             //game.checkCirclePosition(circle[4])
 
             // TODO 9 : Iterate over the array
-            for (var j = 0; j < circles.length; j++ ){
-                var eachCircle = ([j]);
-                physikz.updatePosition(eachCircle);
-                game.checkCirclePosition(eachCircle);
-            }
+           
         }
     
         /* 
@@ -80,13 +84,13 @@ var init = function (window) {
         game.checkCirclePosition = function(circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width ) {
-                circle.x = 0;
-            }
+           
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-          
-            if (circle.x < 0) {
+            if ( circle.x > canvas.width ){
+                circle.x = 0;
+            }
+            if (circle.x < 0){
                 circle.x = canvas.width;
             }
             if (circle.y > canvas.height){
