@@ -29,7 +29,7 @@ var init = function (window) {
                 physikz.addRandomVelocity(circle, canvas, 20, 20);
                 view.addChild(circle);
                 circles.push(circle);
-             }
+             };
         // TODO 3 / 7 : Call the drawCircle() function 
         //drawCircle(0);
         //drawCircle(1);
@@ -52,7 +52,7 @@ var init = function (window) {
         */
         function update() {
             for (var j = 0; j < circles.length; j++ ){
-                var eachCircle = [j];
+                var eachCircle = circles[j];
                 physikz.updatePosition(eachCircle);
                 game.checkCirclePosition(eachCircle);
             } 
@@ -119,6 +119,7 @@ var init = function (window) {
         game.update = update;
         
         app.addUpdateable(window.opspark.game);
+    
     };
 
 
