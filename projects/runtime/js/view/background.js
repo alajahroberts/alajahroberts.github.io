@@ -31,25 +31,18 @@ var background = function (window) {
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() { 
+        background.removeAllChildren();
         var tree
         var buildings
-        draw.rect(width, height, purple);
-        <img src="img/readme/big-moon.png"></img>
+        
+        
 
 
 
             // TODO: 2 - Part 2
-            var moon = draw.bitmap("img/moon.png");
-            moon.x = 300;
-            moon.y = 200;
-            moon.scaleX = 10.0;
-            moon.scaleY = 10.0;
-            background.addChild(moon);
-
-            var circle = draw.circle(10, "white", "LightGray", 2);
-            circle.x = canvasWidth * Math.random();
-            circle.y = groundY * Math.random();
-            background.addChild(circle);
+            var backgroundFill = draw.rect(width, height, fillColor);
+            background.addChild(backgroundFill);
+            
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
          
@@ -60,11 +53,16 @@ var background = function (window) {
             moon.scaleX = 10.0;
             moon.scaleY = 10.0;
             background.addChild(moon);
-
             var circle = draw.circle(10, "white", "LightGray", 2);
             circle.x = canvasWidth * Math.random();
             circle.y = groundY * Math.random();
             background.addChild(circle);
+           
+            for (var i = 0; i < 100; i++){
+            var circle = draw.circle(10, "white")
+           }
+        
+           
 
             
             
