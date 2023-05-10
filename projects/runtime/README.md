@@ -386,7 +386,7 @@ Parallax is a technique in animation for giving the illusion of depth. When you 
 
   **FIND:** `TODO 5: part 2` in the `update` function
 
-  **CODE:** Now, write code in `update` that animates the buildings so that they move towards Halle. We already know how to move the `tree`, so moving the buildings won't be too hard!
+  **CODE:** Now, write0 code in `update` that animates the buildings so that they move towards Halle. We already know how to move the `tree`, so moving the buildings won't be too hard!
 
   However, our `buildings` Array contains the building objects that we want to move. This means that **Iteration** is required!
 
