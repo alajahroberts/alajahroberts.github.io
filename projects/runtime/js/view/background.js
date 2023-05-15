@@ -26,8 +26,8 @@ var background = function (window) {
         var background;
         
         // ANIMATION VARIABLES HERE:
-        var tree
-        var buildings
+        var tree;
+        var buildings = [];
         
      
         // called at the start of game and whenever the page is resized
@@ -40,12 +40,12 @@ var background = function (window) {
 
 
             // TODO: 2 - Part 2
-            var backgroundFill = draw.rect(width, height, fillColor);
-            background.addChild(backgroundFill);
+            var backgroundFill = draw.rect(canvasWidth, groundY,'#00002f');
+            background.addChild(backgroundFill);S
             
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-         
+        
             // TODO: 3 - Add a moon and starfield
             var moon = draw.bitmap('img/moon.png');
             moon.x = 100;
@@ -69,12 +69,12 @@ var background = function (window) {
             
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            for(var i = 0; i < 5; ++i) {
+            for (var i = 0; i < 5; ++i) {
                 var buildingHeight = 300;
-                var building = draw.rect(75, buildingHeight, "LightGray" , "Black" , 1);
-                building.x = 200 * i;
-                background.addChild(building);
-                building.push(building);
+                var buildings = draw.rect(75, buildingHeight, "LightGray" , "Black" , 1);
+                buildings.x = 200 * i;
+                background.addChild(buildings);
+                buildings.push(buildings);
               }
             
             // TODO 4: Part 1 - Add a tree

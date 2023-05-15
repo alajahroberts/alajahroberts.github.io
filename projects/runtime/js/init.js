@@ -24,7 +24,7 @@ var init = function (window) {
         playerManager, 
         particleManager;
     
-    var debugHalleHitZones = false;
+    var debugHalleHitZones = true;
 
     space = app.space;
     rules = app.rules,
@@ -32,7 +32,6 @@ var init = function (window) {
     ground = opspark.makeGround(app);
 
     // TODO 2 : add background
-    makeBackground = draw.rect(canvasWidth, canvasHeight, red);
     var background = opspark.makeBackground(app, ground);
     view.addChild(background);
     
