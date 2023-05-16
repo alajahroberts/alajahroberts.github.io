@@ -41,7 +41,7 @@ var background = function (window) {
 
             // TODO: 2 - Part 2
             var backgroundFill = draw.rect(canvasWidth, groundY,'#00002f');
-            background.addChild(backgroundFill);S
+            background.addChild(backgroundFill);
             
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
@@ -80,7 +80,7 @@ var background = function (window) {
             // TODO 4: Part 1 - Add a tree
              tree = draw.bitmap("img/tree.png");
              tree.x = 0;
-             tree. y = groundY + 20;
+             tree. y = groundY - 20;
              background.addChild(tree);
             
         } // end of render function - DO NOT DELETE
