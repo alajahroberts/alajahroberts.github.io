@@ -70,9 +70,9 @@ var background = function (window) {
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             for (var i = 0; i < 5; ++i) {
-                var buildingHeight = 300;
-                var buildings = draw.rect(75, buildingHeight, "LightGray" , "Black" , 1);
-                buildings.x = 200 * i;
+                var buildingHeight = 400;
+                var buildings = draw.rect(75, buildingHeight, "Purple" , "Purple" , 3);
+                buildings.x = 300 * i;
                 background.addChild(buildings);
                 buildings.push(buildings);
               }
