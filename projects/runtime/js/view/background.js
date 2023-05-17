@@ -48,10 +48,10 @@ var background = function (window) {
         
             // TODO: 3 - Add a moon and starfield
             var moon = draw.bitmap('img/moon.png');
-            moon.x = 100;
-            moon.y = 100;
-            moon.scaleX = 10.0;
-            moon.scaleY = 10.0;
+            moon.x = 700;
+            moon.y = 5;
+            moon.scaleX = 1;
+            moon.scaleY = 1;
             background.addChild(moon);
 
             for (var i = 0; i < 100; i++){
@@ -70,17 +70,18 @@ var background = function (window) {
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             for (var i = 0; i < 5; ++i) {
-                var buildingHeight = 400;
-                var buildings = draw.rect(75, buildingHeight, "Purple" , "Purple" , 3);
-                buildings.x = 300 * i;
-                background.addChild(buildings);
-                buildings.push(buildings);
+                var buildingHeight = Math.floor(Math.random() * 275) + 100;
+                var buildings = draw.rect(85, buildingHeight, "Purple" , "Purple" , 3);
+                buildings.x = 200 * i;
+                buildingHeight.y = groundY - buildingHeight;
+                background.addChild(building);
+                buildings.push(building);
               }
             
             // TODO 4: Part 1 - Add a tree
              tree = draw.bitmap("img/tree.png");
-             tree.x = 0;
-             tree. y = groundY - 20;
+             tree.x = 200;
+             tree. y = 220;
              background.addChild(tree);
             
         } // end of render function - DO NOT DELETE
@@ -95,13 +96,22 @@ var background = function (window) {
             var groundY = ground.y;
             
             // TODO 4: Part 2 - Move the tree!
-            tree.x = tree.x + 1;
+            tree.x = tree.x - 12;
         
             if (tree.x < -200) {
                 tree.x = canvasWidth;
               }
 
-        } // end of update function - DO NOT DELETE
+            for (var i = 0; i < buildings.length; i++){
+                var bldg = buildings[i];
+                bldg.x = bldg.x -8;
+
+                if ( bldg.x < -100){
+                    bldg.x = canvasWidth;
+                };
+            };
+
+        }; // end of update function - DO NOT DELETE
         
         
         
