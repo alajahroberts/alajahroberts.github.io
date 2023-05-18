@@ -35,12 +35,38 @@ var level01 = function (window) {
         game.addGameItem(sawBladeHitZone);
         var obstacleImage = draw.bitmap("img/sawblade.png");
         sawBladeHitZone.addChild(obstacleImage);
+        function createSawBlade (x, y) {
+           var hitZoneSize = 25;
+           var damageFromObstacle = 10;
+           var myObstacle =
+               game.createObstacle(hitZoneSize,
+               damageFromeObstacle);
+        
+        obstacleImage.x = x;
+        obstacleImage.y = y;
 
-        
-        
-        
-        
-        // DO NOT EDIT CODE BELOW HERE
+        game.addGameItem(myObstacle);
+
+        var obstacleImage =
+            draw.bitmap('img/sawblade.png');
+
+        myObstacle.addChild(obstacleImage);
+        obstacleImage.x = -hitZoneSize;
+        obstacleImage.y = -hitZoneSize;
+               }
+       function createCustom(x, y) {
+        var hitZoneSize = 25;
+        var damageFromObstacle = 10;
+        var myObstacle =
+                game.createObstacle(hitZoneSize, damageFromObstacle);
+                
+                myObstalce.x =x;
+                myObstacle.y = y;
+                game.addGameItem(myObstacle);
+                   }
+    
+
+  // DO NOT EDIT CODE BELOW HERE
     }
 };
 
