@@ -36,6 +36,7 @@ var level01 = function (window) {
         var obstacleImage = draw.bitmap("img/sawblade.png");
         sawBladeHitZone.addChild(obstacleImage);
         function createSawBlade (x, y) {
+            createMyObstacle(100, 200); 
            var hitZoneSize = 25;
            var damageFromObstacle = 10;
            var myObstacle =
@@ -64,7 +65,62 @@ var level01 = function (window) {
                 myObstacle.y = y;
                 game.addGameItem(myObstacle);
                    }
-    
+                   var enemy = game.createGameItem("enemy", 25);
+  var redSquare = draw.rect(50, 50, "red");
+  redSquare.x = -25;
+  redSquare.y = -25;
+  enemy.addChild(redSquare);
+  
+  enemy.x = 400;
+  enemy.y = groundY - 50;
+  enemy.velocityX = 1;
+  enemy.rotationalVelocity
+
+  game.addGameItem(enemy);
+ 
+  enemy.onPlayerCollision = function () {};
+  function createEnemy(x, y){
+      var enemy =
+          game.createGameItem('enemy',80);
+          var lynel =  
+          draw.bitmap('im/enemy.png');
+        lynel.x = -80;
+        lynel.y =  -80;
+        enemy.addChild(lynel);
+        enemy.x = x;
+        enemy.y = y;
+        game.addGameItem(enemy);
+        enemy.velocityX = -2;
+        enemy.onPlayerCollision = function () {
+             game.changeIntergrity9(-50);
+             enemy.onProjectileCollision = 
+             function() {
+                game. increaseScore(100);
+                enemy.fadeOut();
+             }
+        }
+  }
+  function createreward(x, y) {
+    var reward =
+        game.createGameItem('reward' ,32);
+        var gem =
+         draw.bitmap9('img/reward.png');
+         gem.x = -32;
+         gemm.y = -32;
+         reward.addChild(gem);
+         reward.x = x;
+         reward.y = y;
+         game.addGameItem(reward);
+         reward.rotationalVelocity = 4;
+         
+         reward.onPlayerCollision =
+         function() {
+                game.changeIntergrity(25);
+                game.increaseScore(300);
+                reward.fadeOut();
+         }
+  }
+
 
   // DO NOT EDIT CODE BELOW HERE
     }
